@@ -14,10 +14,13 @@ export default function Dropzone() {
 
     try {
       setLoading(true);
-      const response = await fetch("http://localhost:3000/convert", {
-        method: "POST",
-        body: formData,
-      });
+      const response = await fetch(
+        "https://lola-converter-server.onrender.com/convert",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Error al convertir el archivo");
